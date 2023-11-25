@@ -5,10 +5,15 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const userRoute = require("./routes/userRoute");
 const errorHandler = require("./middlewares/errorMiddleware");
+const cookieParser = require("cookie-parser")
+
+
+
 const app = express();
 
 // Middlewares
 app.use(cors());
+app.use(cookieParser())
 app.use(express.json()); // This middleware is enough for parsing JSON requests
 app.use(express.urlencoded({ extended: false }));
 
