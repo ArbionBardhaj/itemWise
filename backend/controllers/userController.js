@@ -157,18 +157,48 @@ const getUser = asyncHandler(async (req, res) => {
 });
 
 //get login status
-const loginStatus = asyncHandler(async(req,res)=>{
-  const token = req.cookies.token
-  if(!token){
-    return res.json(false)
-  }
-  
-  //verify token
-  const verified = jwt.verify(token, process.env.JWT_SECRET)
-  if(verified){
-    return res.json(true)
+const loginStatus = asyncHandler(async (req, res) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.json(false);
   }
 
+  //verify token
+  const verified = jwt.verify(token, process.env.JWT_SECRET);
+  if (verified) {
+    return res.json(true);
+  }
+});
+
+const updateUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  if (user) {
+    const { _id, name, email, photo, phone, bio } = user;
+    user.email = email;
+    user.name = req.body.name || name;
+    user.phone = req.body.phone || phone;
+    user.bio = req.body.bio || bio;
+    user.photo = req.body.photo || photo;
+
+
+    const updateUser = await user.save()
+    res.status(200).json({
+      _id: updateUser._id,
+      name: updateUser.name,
+      email: updateUser.email,
+      photo: updateUser.photo,
+      phone: updateUser.phone,
+      bio: updateUser.bio,
+    })
+  }else{
+    res.status(404)
+    throw new Error("user not found")
+  }
+});
+
+const changePassword = asyncHandler(async(req,res)=>{
+  res.send("password changed")
 })
 
 module.exports = {
@@ -177,4 +207,6 @@ module.exports = {
   logout,
   getUser,
   loginStatus,
+  updateUser,
+  changePassword,
 };
