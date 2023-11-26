@@ -40,7 +40,7 @@ const productSchema = mongoose.Schema(
             trim: true,
         },
         image: {
-            type: String,
+            type: Object,
             default: {},
             trim: true,
         },
@@ -48,5 +48,5 @@ const productSchema = mongoose.Schema(
     { timestamps: true }
 );
 
-const Product = mongoose.model("Token", productSchema);
-module.exports = Token;
+const Product = mongoose.model("Product", productSchema);
+module.exports = Product;
