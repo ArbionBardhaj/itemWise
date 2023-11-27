@@ -7,7 +7,7 @@ const userRoute = require("./routes/userRoute");
 const errorHandler = require("./middlewares/errorMiddleware");
 const cookieParser = require("cookie-parser")
 const productRoute = require("./routes/productRoute")
-
+const path = require("path")
 
 const app = express();
 
@@ -16,6 +16,7 @@ app.use(cors());
 app.use(cookieParser())
 app.use(express.json()); // This middleware is enough for parsing JSON requests
 app.use(express.urlencoded({ extended: false }));
+app.use("/uploads", express.static(path.join(__dirname,"uploads")))
 
 // Routes Middleware
 app.use("/api/users", userRoute);

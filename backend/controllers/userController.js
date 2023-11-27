@@ -38,7 +38,7 @@ const registerUser = asyncHandler(async (req, res, next) => {
     throw new Error("This username is already in use");
   }
 
-  // //encrypt password before saving to db
+  // encrypt password before saving to db
   //  const salt = await bcrypt.genSalt(10)
   //  const hashedPassword = await bcrypt.hash(password, salt)
 
