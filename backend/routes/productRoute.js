@@ -3,6 +3,7 @@ const { createProduct, getProducts, getSingleProduct, deleteProduct, updateProdu
 const protect = require("../middlewares/authMiddleware");
 const router = express.Router()
 const {upload}= require("../utils/fileUpload")
+
 router.post("/",protect,upload.single("image") ,createProduct)
 router.patch("/:id",protect ,upload.single("image"),updateProduct)
 

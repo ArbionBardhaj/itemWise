@@ -8,7 +8,7 @@ const errorHandler = require("./middlewares/errorMiddleware");
 const cookieParser = require("cookie-parser")
 const productRoute = require("./routes/productRoute")
 const path = require("path")
-
+const contactRouter = require("./routes/contactRoute")
 const app = express();
 
 // Middlewares
@@ -21,6 +21,7 @@ app.use("/uploads", express.static(path.join(__dirname,"uploads")))
 // Routes Middleware
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute)
+app.use("/api/contact", contactRouter)
 
 app.get("/", (req, res) => {
   res.send("home");
