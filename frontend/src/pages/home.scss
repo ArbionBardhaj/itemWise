@@ -1,0 +1,111 @@
+$body-color: #003566;
+$button-color: #ffc300;
+$button-color-hover: #ff9100;
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(#00356671, #003566), url("../assets/inv.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+
+  .home {
+    height: 100%;
+    nav {
+      flex-direction: row;
+      margin-inline-start: 14px;
+    }
+    button {
+      color: $body-color;
+      border-radius: 1rem;
+      height: 2.5rem;
+      width: 10rem;
+      margin: 1rem;
+      margin-left: 4%;
+      background-color: $button-color;
+      border: none;
+      font-size: 20px;
+      &:hover{
+        background-color: $button-color-hover;
+
+      }
+    }
+  }
+
+  .link{
+    color:$body-color;
+    text-decoration: none;
+  }
+  .f-link{
+    color:white
+    ;text-decoration: none;
+  }
+
+  .auth-nav {
+    .nav-btn {
+      color: $body-color;
+      border-radius: 1rem;
+      height: 2.5rem;
+      width: 10rem;
+      margin: 1rem;
+      margin-left: 4%;
+      background-color: $button-color;
+      border: none;
+      font-size: 20px;
+
+      &:hover {
+        background-color: $button-color-hover;
+        
+      }
+    }
+    nav {
+      margin-left: 80%;
+      margin-top: -70px;
+    }
+  }
+
+  .body {
+    text-align: left;
+    margin-top: 15%;
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      color: white;
+      font-size: 60px;
+      display: block;
+      flex-direction: column;
+    }
+
+    p {
+      color: white;
+      width: 60%;
+      font-size: 25px;
+      display: block;
+      flex-direction: column;
+    }
+
+    button {
+      color: white;
+      border-radius: 1rem;
+      height: 2.5rem;
+      width: 10rem;
+      margin: 1rem;
+      margin-left: 0.3%;
+      background-color: rgba(0, 0, 255, 0);
+      border: 1px solid white;
+      font-size: 20px;
+      &:hover{
+        background-color: white;
+        color:black
+      }
+    }
+  }
+}
