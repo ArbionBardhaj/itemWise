@@ -1,0 +1,41 @@
+$button-color-hover: rgb(47, 47, 200);
+
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 8rem;
+    background-color: rgb(72, 72, 220);
+    height: 4rem;
+    font-size: 25px;
+    border: 0;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 10%;
+    &:hover{
+        background-color: $button-color-hover;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    }
+}
+
+
+
+h2{
+    font-size: 50px;
+}
+
+.logo-center{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
