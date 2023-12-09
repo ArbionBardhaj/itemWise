@@ -15,7 +15,7 @@ function Register() {
             <input type="email" required placeholder="email" />
             <input type="password" required placeholder="password" />
             <input type="password" required placeholder="repeat password" />
-            <button type="submit" className="btn">
+            <button type="submit" className="--btn-primary">
               Register
             </button>
           </form>

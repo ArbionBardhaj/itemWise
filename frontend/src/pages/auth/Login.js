@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./auth.module.scss"
-import "./login.scss"
 import Card from '../../components/card/Card'
 import { Link } from 'react-router-dom'
 function Login() {
@@ -13,7 +12,7 @@ function Login() {
              <form>
                  <input type="email" required placeholder='email' />
                  <input type="password" required placeholder='password' />
-                 <button type='submit' className='btn'>Login</button>
+                 <button type='submit' className='--btn'>Login</button>
 
              </form>
              <Link to="/forgot" className='link'>Forgot Password</Link>

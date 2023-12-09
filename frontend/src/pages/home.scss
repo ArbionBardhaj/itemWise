@@ -1,3 +1,6 @@
+$button-height: 5rem; // Set the desired height
+$button-width: 15rem; // Set the desired width
+
 $body-color: #003566;
 $button-color: #ffc300;
 $button-color-hover: #ff9100;
@@ -35,17 +38,17 @@ $button-color-hover: #ff9100;
     button {
       color: white;
       border-radius: 1rem;
-      height: 2.5rem;
-      width: 10rem;
+      height: $button-height;
+      width: $button-width;
       margin: 1rem;
       background-color: rgba(0, 0, 255, 0);
       border: 1px solid white;
-      font-size: 20px;
-      .register-btn{
-        color:white;
+      font-size: 30px;
+      .register-btn {
+        color: white;
         text-decoration: none;
-        &:hover{
-          color:#003566
+        &:hover {
+          color: #003566;
         }
       }
 
@@ -77,16 +80,15 @@ $button-color-hover: #ff9100;
     .button {
       color: $body-color;
       border-radius: 1rem;
-      height: 2.5rem;
-      width: 10rem;
+      height: $button-height;
+      width: $button-width;
       margin: 1rem;
       background-color: $button-color;
       border: none;
-      font-size: 20px;
-      .link{
-        color:rgb(0, 0, 0);
+      font-size: 30px;
+      .link {
+        color: rgb(0, 0, 0);
         text-decoration: none;
-        
       }
 
       &:hover {
@@ -96,16 +98,17 @@ $button-color-hover: #ff9100;
   }
 }
 
-.dashboard-btn{
+.dashboard-btn {
+  height: $button-height;
+  width: $button-width;
   color: $body-color;
   border-radius: 1rem;
-  height: 2.5rem;
-  width: 10rem;
   margin: 1rem;
   background-color: $button-color;
   border: none;
-  font-size: 20px;
-  &:hover{
+  font-size: 50px;
+
+  &:hover {
     background-color: $button-color-hover;
   }
 }
