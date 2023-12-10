@@ -3,7 +3,7 @@ import React from 'react'
 function Header() {
   return (
     <div className='--pad header'>
-      <div className='--flex-end --p'>
+      <div className='--flex-end '>
         <h3>
           <span className='--fw-thin'>Welcome,</span>
           <span className='--color-danger'>Arbion</span>
