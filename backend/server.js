@@ -12,7 +12,10 @@ const contactRouter = require("./routes/contactRoute")
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://itemwise-app.vercel.app"],
+  credentials: true
+}));
 app.use(cookieParser())
 app.use(express.json()); // This middleware is enough for parsing JSON requests
 app.use(express.urlencoded({ extended: false }));
