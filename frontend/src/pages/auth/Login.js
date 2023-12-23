@@ -26,12 +26,7 @@ function Login() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handlePasswordChange = (e) => {
-    const { value } = e.target;
-    if (value.length >= 8) {
-      setFormData({ ...formData, password: value });
-    }
-  };
+
   const login = async (e) => {
     e.preventDefault();
 
@@ -87,7 +82,7 @@ function Login() {
               placeholder="password"
               name="password"
               value={password}
-              onChange={handlePasswordChange}
+              onChange={handleInputChange }
             />
             <button type="submit" className="--btn" disabled={isLoading}>
               {isLoading ? "Logging in..." : "Login"}

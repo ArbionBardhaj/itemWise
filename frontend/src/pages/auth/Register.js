@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./register.scss";
 import styles from "./auth.module.scss";
 import Card from "../../components/card/Card";
 import { Link, useNavigate } from "react-router-dom";

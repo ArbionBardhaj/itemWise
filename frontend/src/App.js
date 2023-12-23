@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Forgot from "./pages/auth/Forgot";
 import Login from "./pages/auth/Login";
@@ -23,7 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot" element={<Forgot />} />
-        <Route path="/reset" element={<Reset />} />
+        <Route path="/resetpassword" element={<Reset />} />
         <Route path="/dashboard" element={
           <Sidebar>
             <Layout>

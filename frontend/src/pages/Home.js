@@ -1,6 +1,7 @@
 import React from "react";
 import "./home.scss";
 import { Link } from "react-router-dom";
+import { ShowOnLogin, ShowOnLogout } from "../components/protect/HiddenLink";
 const Home = () => {
   return (
     <div className="body">
@@ -13,26 +14,32 @@ const Home = () => {
           productivity and make informed decisions effortlessly. Try it FREE
           today!
         </p>
-        <button className="f-link">
-          <Link to="/register" className="register-btn">
-            Register
-          </Link>
-        </button>
+        <ShowOnLogout>
+          <button className="f-link">
+            <Link to="/register" className="register-btn">
+              Register
+            </Link>
+          </button>
+        </ShowOnLogout>
       </div>
       <div className="home">
         <nav>
-          <button className="dashboard-btn">
-            {" "}
-            <Link className="link" to="/dashboard">
-              Dashboard
+          <ShowOnLogin>
+            <button className="dashboard-btn">
+              {" "}
+              <Link className="link" to="/dashboard">
+                Dashboard
+              </Link>
+            </button>
+          </ShowOnLogin>
+        </nav>
+        <ShowOnLogout>
+          <button className="button">
+            <Link className="link" to="/login">
+              Login
             </Link>
           </button>
-        </nav>
-        <button className="button">
-          <Link className="link" to="/login">
-            Login
-          </Link>
-        </button>
+        </ShowOnLogout>
       </div>
     </div>
   );

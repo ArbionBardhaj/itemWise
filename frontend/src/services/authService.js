@@ -9,8 +9,6 @@ export const validateEmail = (email) => {
   );
 };
 
-
-
 //Register user
 export const registerUser = async (userData) => {
   try {
@@ -32,23 +30,71 @@ export const registerUser = async (userData) => {
   }
 };
 
-
 //Login user
 export const loginUser = async (userData) => {
-   try {
-     const response = await axios.post(
-       `${BACKEND_URL}/api/users/login`,
-       userData,
-     );
-     if (response.statusText === "OK") {
-       toast.success("User Loged In succsessfully");
-     }
-     return response.data;
-   } catch (error) {
-     const message =
-       (error.response && error.response.data && error.response.data.message) ||
-       error.message ||
-       error.toString();
-     toast.error(message);
-   }
- };
+  try {
+    const response = await axios.post(
+      `${BACKEND_URL}/api/users/login`,
+      userData
+    );
+    if (response.statusText === "OK") {
+      toast.success("User Loged In succsessfully");
+    }
+    return response.data;
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    toast.error(message);
+  }
+};
+
+//logout
+export const logout = async (userData) => {
+  try {
+    await axios.get(`${BACKEND_URL}/api/users/logout`);
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    toast.error(message);
+  }
+};
+
+
+//Forgot password
+export const forgotPassword = async (userData) => {
+  try {
+    const response = await axios.post(
+      `${BACKEND_URL}/api/users/forgotpassword`,
+      userData
+    );
+    toast.success(response.data.message)
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    toast.error(message);
+  }
+};
+
+
+// Reset password
+export const resetPassword = async (userData, resetToken) => {
+  try {
+    const response = await axios.put(
+      `${BACKEND_URL}/api/users/resetpassword?token=${encodeURIComponent(resetToken)}`,
+      userData
+    );
+    return response.data;
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    toast.error(message);
+  }
+};
