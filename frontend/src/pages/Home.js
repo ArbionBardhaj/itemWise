@@ -2,7 +2,11 @@ import React from "react";
 import "./home.scss";
 import { Link } from "react-router-dom";
 import { ShowOnLogin, ShowOnLogout } from "../components/protect/HiddenLink";
+
 const Home = () => {
+
+
+  
   return (
     <div className="body">
       <div className="overlay-div">
@@ -25,13 +29,15 @@ const Home = () => {
       <div className="home">
         <nav>
           <ShowOnLogin>
-            <button className="dashboard-btn">
+          <button className="dashboard-btn">
               {" "}
               <Link className="link" to="/dashboard">
                 Dashboard
               </Link>
             </button>
           </ShowOnLogin>
+     
+         
         </nav>
         <ShowOnLogout>
           <button className="button">

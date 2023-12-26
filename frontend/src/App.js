@@ -8,29 +8,55 @@ import Reset from "./pages/auth/Reset";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Sidebar from "./components/sidebar/Sidebar";
 import Layout from "./components/layout/Layout";
-import axios from "axios";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-axios.defaults.withCredentials = true
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getLoginStatus } from "./services/authService";
+import { SET_LOGIN } from "./redux/features/auth/authSlice";
+import AddProduct from "./pages/addProduct/AddProduct";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    async function loginStatus() {
+      const status = await getLoginStatus();
+      if (status !== undefined) {
+        dispatch(SET_LOGIN(status));
+      }
+    }
+    loginStatus();
+  }, [dispatch]);
+  
   return (
     <BrowserRouter>
-    <ToastContainer />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot" element={<Forgot />} />
         <Route path="/resetpassword" element={<Reset />} />
-        <Route path="/dashboard" element={
-          <Sidebar>
-            <Layout>
-              <Dashboard />
-            </Layout>
-          </Sidebar>
-        } />
+        
+        <Route
+          path="/dashboard"
+          element={
+            <Sidebar>
+              <Layout>
+                <Dashboard />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/add-product"
+          element={
+            <Sidebar>
+              <Layout>
+                <AddProduct />
+              </Layout>
+            </Sidebar>
+          } />
       </Routes>
     </BrowserRouter>
   );
