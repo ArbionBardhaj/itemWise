@@ -36,7 +36,7 @@ To get started with the project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/itemWise.git
+   git clone https://github.com/ArbjonBardhaj/itemWise.git
    cd itemWise
    Install dependencies:
 
